@@ -1,0 +1,63 @@
+AddType text/x-component .htc
+
+RewriteEngine On
+# localhost
+ RewriteBase /nast.gov.np/
+# live
+# RewriteBase /
+
+
+RewriteRule ^cart/remove/([0-9]+)$ index.php?action=cart&removeId=$1 [L]
+RewriteRule ^cart/([0-9]+)$ index.php?action=cart&productId=$1 [L]
+RewriteRule ^cart index.php?action=cart [L]
+
+RewriteRule ^checkout index.php?action=check_out [L]
+RewriteRule ^signup index.php?action=sign_up [L]
+RewriteRule ^prelogin index.php?action=pre_login [L]
+RewriteRule ^makelogin index.php?action=make_log_in [L]
+RewriteRule ^forgotpassword index.php?action=forgot_password [L]
+RewriteRule ^home index.php [L]
+RewriteRule ^donate index.php?action=donate [L]
+RewriteRule ^apply index.php?action=apply [L]
+RewriteRule ^search index.php?action=search [L]
+RewriteRule ^category index.php?action=products [L]
+RewriteRule ^products index.php?action=products [L]
+
+RewriteRule ^register index.php?action=register [L]
+RewriteRule ^login index.php?action=login [L]
+RewriteRule ^auth index.php?action=auth [L]
+RewriteRule ^addfung index.php?action=addfung [L]
+RewriteRule ^logout index.php?action=logout [L]
+RewriteRule ^forget index.php?action=forget [L]
+
+RewriteRule ^alpsearch/([-A-Za-z]+)$ index.php?action=searchalp&alp=$1 [L]
+RewriteRule ^detailsearch/([0-9]+)$ index.php?action=nsearch&iddd=$1 [L]
+
+# fro PRODUCTLIST
+RewriteRule ^productlist/([-A-Za-z]+)/([-A-Za-z0-9]+)$ index.php?action=productlist&$1=$2 [L]
+RewriteRule ^productlist index.php?action=productlist [L]
+
+
+
+# fro TESTIMONIALS and FEEDBACK
+#RewriteRule ^testimonials/([-A-Za-z]+)/([-A-Za-z0-9]+)$ index.php?action=testimonials&$1=$2 [L]
+#RewriteRule ^testimonials index.php?action=testimonials [L]
+
+RewriteRule ^feedback/([-A-Za-z]+)/([-A-Za-z0-9]+)$ index.php?action=feedback&$1=$2 [L]
+RewriteRule ^feedback index.php?action=feedback [L]
+
+RewriteRule ^contact-us/([-A-Za-z]+)/([-A-Za-z0-9]+)$ index.php?action=contact-us&$1=$2 [L]
+RewriteRule ^contact-us index.php?action=contact-us [L]
+
+RewriteRule ^([-A-Za-z]+)/([-A-Za-z0-9]+)$ index.php?action=cat&catId=$2 [L]
+RewriteRule ^([-A-Za-z]+)/([-A-Za-z0-9]+)/$ index.php?action=cat&catId=$2 [L]
+
+RewriteRule ^([-A-Za-z0-9]+)/page/([0-9]+)$ index.php?query=$1&page=$2 [L]
+RewriteRule ^([-A-Za-z0-9])+$ index.php?query=$0 [L]
+#RewriteRule index.html$ index.php [L]
+
+#RewriteRule ^gallery/([0-9]+)\.html$ index.php?galleryId=$1 [L]
+#RewriteRule ^testimonials/([-A-Za-z0-9]+)\.html$ index.php?action=testimonials&$1 [L]
+
+#RewriteRule ^([-A-Za-z0-9]+)/([-A-Za-z0-9]+)\.html$ index.php?action=$1&title=$2 [L]
+#RewriteRule ^([-A-Za-z0-9]+)\.html$ index.php?title=$1 [L]
